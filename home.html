@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Omar's page</title>
+    </head>
+    <body>
+        <div>
+    <h1>Welcome, Omar</h1>   
+    <p>This is my home page</p> 
+    <button onclick="aboutme()">About Me</button>
+    <button onclick="myprojects()">My Projects</button>
+    <button onclick="myfavoritehobby()">My Favorite Hobby</button>
+    <p id ="info"></p>
+    </div>
+   <button onclick="logout()">Logout</button> 
+    </body>
+</html>
+<style>
+body{
+    background-color: #F4F7FB;
+    text-align: center;
+    font-family: arial;
+    color: #1e293b;
+}h1{
+     color: #123b66;
+     font-size: 40px; 
+}button{
+    background-color: white;
+    color: #123b66;
+    border: 1px solid #cbd5e1;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin: 20px;
+    transition: 0.3s;
+}
+button:hover{
+    background-color: #dbeafe;
+    color: #123b66;
+}p{
+    color: #123b66;
+    font-size: 18px;
+}
+div{
+    background-color: white;
+     width: 400px; 
+    margin: 100px auto; 
+    padding: 30px; 
+    border-radius: 15px;
+     box-shadow: 0 4px 15px gray; 
+}
+</style>
+<script>
+    function aboutme() {
+  document. getElementById("info").innerHTML=("My name is omar. <br>"+ "I'm 16 years old.<br>"+ "I'm interested in foot ball and programming"+ "My favorite player is Cristiano Ronaldo🐐.<br>");
+    }
+    function myprojects() {
+        document.getElementById("info").innerHTML=("My projects: <br>"+"1. Login Page🔐 <br>"+"2. Personal Home Page💻 <br>"+ "3. More Projects Coming Soon🔥");
+    }
+    function myfavoritehobby(){
+        document.getElementById("info").innerHTML=("My favorite hobbies are: <br>"+"Programming💻 <br>"+ "Football⚽");
+    }
+    function logout(){
+        window.location.href="index.html"
+    }
+</script>
