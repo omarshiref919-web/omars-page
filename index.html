@@ -1,0 +1,128 @@
+<title>Omar's page</title>
+<div>
+<h1>Login</h1>
+<h1>Omar's page</h1>
+<input id ="username" type="text" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+<button onclick="showPassword()">👁</button>
+<button onclick="login()">Login</button>
+<button onclick="resetfrom()">Reset</button>
+<p id ="message"></p>
+</div>
+
+
+
+ <style>
+    body {
+        background-color: #eef2f7;
+        text-align: center;
+        font-family: verdana;
+    }
+    h1{
+        color: #163257;
+        font-size: 40px;
+    }
+    input{
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid gray;
+        background-color: white;
+        color: #02030a;
+        width: 250px;
+        height: 30px;
+        border-radius: 8px;
+    box-sizing: border-box;
+    }
+    input:focus{  
+        background: color #f0f7ff;; 
+    }
+    
+    button{
+        transition: 0.5s;
+        color: white;
+        border: 1px solid #1e3a5f;
+        padding: 10px;
+        background-color: #1e3a5f;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover{
+        background-color: #315d8c;
+    }
+    p{
+        font-size: 18px;
+        animation: massage 0.5s;
+    }
+    @keyframes message{
+        0%{
+            transform: scale(0.5);
+        }
+        100%{
+            transform: scale(1);
+        }
+    }
+    
+    
+ </style>
+
+<script>
+    let attemps=0;
+function login (){
+    
+    if(attemps>=5){
+        message.textContent="Too many attemps";
+        
+         return;
+    }
+    attemps+=1;
+    let username=
+    document .getElementById("username").value;
+    let password=
+    document .getElementById("password").value;
+    let message= 
+    document.getElementById("message");
+      if(username===""|| password===""){
+        message.textContent="Please fill in all filds. Attemps"+attemps;
+        message.style.color="red";
+        message.style.animation=
+        "none";
+         message.offsetHeight;
+        message.style.animation="message 0.5s";
+      }
+    else if (username==="omar"&& password=== "omar2010"){
+    document .getElementById("message").textContent="login succesful";
+   document.getElementById("message") .style.color="green";
+    message.style.animation= 
+    "none";
+     message.offsetHeight;
+    message.style.animation= 
+    "message 0.5s";
+    window.location.href="home.html";
+    } else{
+    document.getElementById("message").textContent="Incorrect password or username. Attemps"+attemps;
+    document.getElementById("message").style.color="red"
+    message.style.animation= 
+    "none";
+     message.offsetHeight;
+    message.style.animation= 
+    "message 0.5s";
+    }
+      }
+    function showPassword(){
+        let password= 
+        document.getElementById("password");
+        if (password.type==="password"){
+            password.type="text";
+        }else{
+            password.type="password";
+        }
+        
+    
+}
+function resetfrom(){
+    document.getElementById("username").value="";
+    document.getElementById("password").value="";
+}
+
+</script>
