@@ -1,4 +1,4 @@
-<title>Omar's page</title>
+title>Omar's page</title>
 <div class="login-box">
 <h1>Login</h1>
 <h1>Omar's page</h1>
@@ -81,18 +81,19 @@ input:focus {
     color: white;
     font-size: 16px;
     font-weight: bold;
-    cursor: pointer;
+     cursor: pointer; 
     transition: 0.25s;
     box-shadow: 0 8px 18px rgba(30, 58, 138, 0.2);
 }
 
 .login-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 24px rgba(30, 58, 138, 0.28);
+     box-shadow: 0 12px 24px rgba(30, 58, 138, 0.28); 
 }
 
 .login-btn:active {
     transform: translateY(0);
+    
 }
 
 /* Show Password */
@@ -106,7 +107,7 @@ input:focus {
 }
 
 .show-password:hover {
-    opacity: 1;
+     opacity: 1;
     transform: scale(1.1);
 }
 
@@ -201,8 +202,7 @@ function login (){
     "message 0.5s";
     if(attemps===5) startLockout(message);
     }
-      }
-    function startLockout() {
+}function startLockout() {
     let time = 30;
 
     message.textContent = "Too many attempts. Try again in " + time + " seconds.";
@@ -219,7 +219,8 @@ function login (){
         }
     }, 1000);
 }
-    }
+    
+     
     function showPassword(){
         let password= 
         document.getElementById("password");
