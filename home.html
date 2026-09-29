@@ -1,55 +1,99 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Omar's page</title>
     </head>
     <body>
-        <div>
-    <h1>Welcome, Omar</h1>   
+        <div class="container">
+    <h1>Welcome, Omar</h1>  
     <p>This is my home page</p> 
     <button onclick="aboutme()">About Me</button>
     <button onclick="myprojects()">My Projects</button>
     <button onclick="myfavoritehobby()">My Favorite Hobby</button>
     <p id ="info"></p>
     </div>
-   <button onclick="logout()">Logout</button>
-   <img src="WhatsApp Image 2026-09-29 at 2.01.21 AM.jpeg"alt ="my photo">
+    <img src="c:\Users\CompuMisr\OneDrive\Pictures\whatsapp\WhatsApp Image 2026-09-29 at 2.01.21 AM.jpeg"alt ="my photo">
+  <button class="logout" onclick="logout()">Logout</button>
     </body>
 </html>
 <style>
-body{
-    background-color: #F4F7FB;
+    body {
+    margin: 0;
+    min-height: 100vh;
+    background: #f4f6f8;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
     text-align: center;
-    font-family: arial;
-    color: #1e293b;
-}h1{
-     color: #123b66;
-     font-size: 40px; 
-}button{
-    background-color: white;
-    color: #123b66;
-    border: 1px solid #cbd5e1;
-    font-weight: bold;
-    font-size: 15px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    margin: 20px;
-    transition: 0.3s;
 }
-button:hover{
-    background-color: #dbeafe;
-    color: #123b66;
-}p{
-    color: #123b66;
+
+h1 {
+    color: #102a43;
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+img {
+    width: 260px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    margin: 25px auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+p {
     font-size: 18px;
+    line-height: 1.7;
+    color: #52606d;
 }
-div{
-    background-color: white;
-     width: 400px; 
-    margin: 100px auto; 
-    padding: 30px; 
-    border-radius: 15px;
-     box-shadow: 0 4px 15px gray; 
+
+button {
+    background: #102a43;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #243b53;
+    transform: translateY(-2px);
+}
+
+input {
+    width: 250px;
+    padding: 12px;
+    margin: 8px;
+    border: 1px solid #bcccdc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: #102a43;
+    box-shadow: 0 0 5px rgba(16, 42, 67, 0.2);
+}
+.logout {
+    display: block;
+    margin: 30px auto 10px;
+    padding: 10px 24px;
+    background: #102a43;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
 }
 </style>
 <script>
