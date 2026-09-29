@@ -6,7 +6,7 @@
 <input id="password" type="password" placeholder="Password">
 <button class="login-btn" onclick="login()">Login</button>
 <button class="show-password" onclick="showPassword()">👁️</button>
-<button class="reset-btn" onclick="resetfrom">Reset</button>
+<button class="reset-btn" onclick="reset()">Reset</button>
 <p id ="message"></p>
 </div>
 
@@ -202,12 +202,23 @@ function login (){
     if(attemps===5) startLockout(message);
     }
       }
-    function startLockout(message){
-        message.textContent="Too many attempts. Try again in 30 seconds.";
-        setTimeout(function(){
-            attemps=0;
-            message.textContent="";
-        }, 30000);
+    function startLockout() {
+    let time = 30;
+
+    message.textContent = "Too many attempts. Try again in " + time + " seconds.";
+
+    let timer = setInterval(function() {
+        time--;
+
+        message.textContent = "Too many attempts. Try again in " + time + " seconds.";
+
+        if (time === 0) {
+            clearInterval(timer);
+            attempts = 0;
+            message.textContent = "";
+        }
+    }, 1000);
+}
     }
     function showPassword(){
         let password= 
@@ -220,7 +231,7 @@ function login (){
         
     
 }
-function resetfrom(){
+function reset(){
     document.getElementById("username").value="";
     document.getElementById("password").value="";
 }
