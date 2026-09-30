@@ -9,6 +9,7 @@
 <button class="reset-btn" onclick="reset()">Reset</button>
 <p id ="message"></p>
 </div>
+<button class="dark-btn" onclick="DarkMode()">Dark Mode🌙</button>
 
  <style>
    * {
@@ -23,9 +24,7 @@ body {
     align-items: center;
     font-family: Arial, sans-serif;
     background:
-        radial-gradient(circle at top left, #dbeafe, transparent 35%),
-        radial-gradient(circle at bottom right, #c7d2fe, transparent 35%),
-        #f8fafc;
+        radial-gradient(circle at top left, #dbeafe, transparent 28%), #f8fafc;
 }
 
 /* Login Card */
@@ -158,6 +157,48 @@ input:focus {
         font-size: 29px;
     }
 }
+   .dark-mode {
+    background:
+        radial-gradient(circle at top left, #64748b, transparent 32%),
+        radial-gradient(circle at bottom right, #1e3a8a, transparent 38%),
+        #0f172a;
+color: white;
+   }
+
+ 
+ .dark-btn {
+    position: fixed;
+    top: calc(50% + 270px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 10px 18px;
+    border: 1px solid #dbe1e8;
+    border-radius: 50px;
+    background: white;
+    color: #102a43;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.12);
+}
+
+.dark-btn:hover {
+     background: #102a43;
+     color: white; 
+    box-shadow: 0 7px 16px rgba(16, 42, 67, 0.18);
+}
+ .dark-mode .dark-btn {
+    background: #334155;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+.dark-mode .dark-btn:hover {
+    background: #475569;
+}
+
  </style>
 
 <script>
@@ -166,7 +207,6 @@ function login (){
     let message=document.getElementById("message");
     if(attemps>=5){
          message.textContent="Too many attempts. Try again in 30 seconds.";
-         return;
     }
     attemps+=1;
     let username=
@@ -181,7 +221,7 @@ function login (){
         "none";
          message.offsetHeight;
         message.style.animation="message 0.5s";
-         if(attemps===5) startLockout(message);
+         if(attemps===5) {startLockout(message);}
       }
     else if (username==="omar"&& password=== "omar2010"){
     document .getElementById("message").textContent="login succesful";
@@ -200,7 +240,7 @@ function login (){
      message.offsetHeight;
     message.style.animation= 
     "message 0.5s";
-    if(attemps===5) startLockout(message);
+if(attemps===5) {startLockout(message);}
     }
 }function startLockout() {
     let time = 30;
@@ -214,7 +254,7 @@ function login (){
 
         if (time === 0) {
             clearInterval(timer);
-            attempts = 0;
+            attemps = 0;
             message.textContent = "";
         }
     }, 1000);
@@ -235,6 +275,21 @@ function login (){
 function reset(){
     document.getElementById("username").value="";
     document.getElementById("password").value="";
+}
+function DarkMode() {
+    document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "true");
+    } else {
+        localStorage.setItem("darkMode", "false");
+    }
+}
+
+if (localStorage.getItem("darkMode")=== "true") {
+    document.body.classList.add("dark-mode");
+}else {
+    document.body.classList.remove("dark-mode");
 }
 
 </script>
