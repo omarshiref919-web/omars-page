@@ -7,37 +7,54 @@
         <div class="container">
     <h1>Welcome, Omar</h1>  
     <p>This is my home page</p> 
-    <button onclick="aboutme()">About Me</button>
-    <button onclick="myprojects()">My Projects</button>
-    <button onclick="myfavoritehobby()">My Favorite Hobby</button>
+    <button onclick="aboutme(this)">About Me</button>
+    <button  onclick="myprojects(this)">My Projects</button>
+    <button onclick="myfavoritehobby(this)">My Favorite Hobby</button>
     <p id ="info"></p>
     </div>
-    <img src="WhatsApp Image 2026-09-29 at 2.01.21 AM.jpeg"alt ="my photo">
+    <img src="c:\Users\CompuMisr\OneDrive\Pictures\whatsapp\WhatsApp Image 2026-09-29 at 2.01.21 AM.jpeg" alt="my photo">
   <button class="logout" onclick="logout()">Logout</button>
+  <button class="reset" onclick="resetInfo()">Reset🔁 </button>
+  <button class="darkmode" onclick="DarkMode()">Dark Mode🌙</button>
     </body>
 </html>
 <style>
-    body {
+   * {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     min-height: 100vh;
-    background: #f4f6f8;
+    background: radial-gradient(circle at top left, #dbeafe, transparent 28%), #f8fafc;;
     font-family: Arial, sans-serif;
-    color: #222;
+    color: #102a43;
 }
 
 .container {
     width: 90%;
     max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 0;
+    margin: 40px auto 0;
+    padding: 40px;
     text-align: center;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(16, 42, 67, 0.10);
 }
 
 h1 {
     color: #102a43;
     font-size: 38px;
-    margin-bottom: 25px;
+    margin: 0 0 15px;
 }
+
+p {
+    font-size: 18px;
+    line-height: 1.7;
+    color: #64748b;
+}
+
+/* الصورة */
 
 img {
     width: 260px;
@@ -45,68 +62,264 @@ img {
     object-fit: cover;
     border-radius: 20px;
     display: block;
-    margin: 25px auto;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(16, 42, 67, 0.15);
 }
 
-p {
-    font-size: 18px;
-    line-height: 1.7;
-    color: #52606d;
-}
+/* الأزرار */
 
 button {
     background: #102a43;
     color: white;
     border: none;
-    padding: 12px 25px;
-    border-radius: 10px;
-    font-size: 16px;
+    padding: 12px 24px;
+    margin: 6px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.25s;
+    box-shadow: 0 5px 12px rgba(16, 42, 67, 0.15);
 }
 
 button:hover {
     background: #243b53;
     transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(16, 42, 67, 0.20);
 }
 
-input {
-    width: 250px;
-    padding: 12px;
-    margin: 8px;
-    border: 1px solid #bcccdc;
-    border-radius: 8px;
-    outline: none;
-    font-size: 15px;
+button:active {
+    transform: translateY(0);
 }
 
-input:focus {
-    border-color: #102a43;
-    box-shadow: 0 0 5px rgba(16, 42, 67, 0.2);
-}
-.logout {
+/* زرار Dark Mode */
+
+.darkmode {
     display: block;
-    margin: 30px auto 10px;
-    padding: 10px 24px;
+    margin: 20px auto 0;
+    background: #ffffff;
+    color: #102a43;
+   padding: 10px 18px;
+    border: 1px solid #dbe1e8;
+    border-radius: 50px;
+    background: white;
+    color: #102a43;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.12);
+}
+
+.darkmode:hover {
     background: #102a43;
     color: white;
-    border: none;
-    border-radius: 8px;
+    box-shadow: 0 7px 16px rgba(16, 42, 67, 0.18);
+}
+
+
+/* زرار Logout */
+
+.logout {
+    display: block;
+    margin: 25px auto;
+    background: #102a43;
+}
+.reset {
+    display: block;
+    margin: 10px auto;
+    background: #102a43;
+    margin-top: 18px;
+    margin-top: 20px;
+        display: block;
+    margin: 20px auto 0;
+    background: #ffffff;
+    color: #102a43;
+    border: 1px solid #cbd5e1;
+    padding: 10px 18px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.25s;
+    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.12);
+}
+.reset:hover {
+    background: #102a43;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* Dark Mode */
+
+.dark-mode {
+     background:
+        radial-gradient(circle at top left, #64748b, transparent 32%),
+        radial-gradient(circle at bottom right, #1e3a8a, transparent 38%),
+        #0f172a;
+color: white;
+}
+
+.dark-mode .container {
+    background: #1e293b;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.30);
+}
+
+.dark-mode h1 {
+    color: #f8fafc;
+}
+
+.dark-mode p {
+    color: #cbd5e1;
+}
+
+.dark-mode button {
+    background: #334155;
+    color: #f8fafc;
+}
+
+.dark-mode button:hover {
+    background: #475569;
+}
+
+.dark-mode .darkmode {
+    background: #334155;
+    color: #f8fafc;
+    border-color: #475569;
+}
+
+.dark-mode .darkmode:hover {
+    background: #475569;
+}
+
+/* الصورة في Dark Mode */
+
+.dark-mode img {
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
+}.dark-mode .active {
+    background: #f8fafc;
+    color: #0f172a;
+    border: 2px solid #cbd5e1;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode .active:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+    border-color: #f8fafc;
+    transform: translateY(-2px);
+}
+
+
+/* الموبايل */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+        padding: 28px 18px;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    img {
+        width: 220px;
+        height: 260px;
+    }
+
+    button {
+        padding: 11px 18px;
+        font-size: 14px;
+    }
+}
+.active {
+    background: #ffffff;
+    color: #102a43;
+    border: 2px solid #102a43;
+    box-shadow: 0 0 0 4px rgba(16, 42, 67, 0.08);
+    transform: translateY(-2px);
+}
+
+.active:hover {
+    background: #f1f5f9;
+    color: #102a43;
+    border-color: #102a43;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(16, 42, 67, 0.15);
 }
 </style>
 <script>
-    function aboutme() {
-  document. getElementById("info").innerHTML=("My name is omar. <br>"+ "I'm 16 years old.<br>"+ "I'm interested in foot ball and programming"+ "My favorite player is Cristiano Ronaldo🐐.<br>");
-    }
-    function myprojects() {
-        document.getElementById("info").innerHTML=("My projects: <br>"+"1. Login Page🔐 <br>"+"2. Personal Home Page💻 <br>"+ "3. More Projects Coming Soon🔥");
-    }
-    function myfavoritehobby(){
-        document.getElementById("info").innerHTML=("My favorite hobbies are: <br>"+"Programming💻 <br>"+ "Football⚽");
-    }
+   function setActive(button) {
+    let buttons = document.querySelectorAll("button");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+}
+
+function aboutme(button) {
+    setActive(button);
+
+    document.getElementById("info").innerHTML =
+        "My name is Omar.<br>" +
+        "I'm 16 years old.<br>" +
+        "I'm interested in football and programming.<br>" +
+        "My favorite player is Cristiano Ronaldo 🐐.";
+}
+
+function myprojects(button) {
+    setActive(button);
+
+    document.getElementById("info").innerHTML =
+        "My projects:<br>" +
+        "1. Login Page 🔐<br>" +
+        "2. Personal Home Page 💻<br>" +
+        "3. More Projects Coming Soon 🔥";
+}
+
+function myfavoritehobby(button) {
+    setActive(button);
+
+    document.getElementById("info").innerHTML =
+        "My favorite hobbies are:<br>" +
+        "Programming 💻<br>" +
+        "Football ⚽";
+}
     function logout(){
         window.location.href="index.html"
     }
+    function DarkMode(){
+         document.body.classList.toggle("dark-mode");
+
+    if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "true");
+    } else {
+        localStorage.setItem("darkMode", "false");
+    }
+}
+
+if (localStorage.getItem("darkMode")=== "true") {
+    document.body.classList.add("dark-mode");
+}else {
+    document.body.classList.remove("dark-mode");
+    } 
+    function resetInfo() {
+    let buttons = document.querySelectorAll("button");
+
+    buttons.forEach(function(btn) {
+        btn.classList.remove("active");
+    });
+
+    document.getElementById("info").innerHTML = "";
+}
 </script>
