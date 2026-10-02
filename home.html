@@ -1,4 +1,4 @@
-</script><!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Omar's page</title>
@@ -12,158 +12,262 @@
     <button onclick="myfavoritehobby(this)">My Favorite Hobby</button>
     <p id ="info"></p>
     </div>
-    <img src="WhatsApp Image 2026-09-29 at 2.01.21 AM.jpeg" alt="my photo">
+    <img src="c:\Users\CompuMisr\OneDrive\Pictures\whatsapp\WhatsApp Image 2026-09-29 at 2.01.21 AM.jpeg" alt="my photo">
   <button class="logout" onclick="logout()">Logout</button>
   <button class="reset" onclick="resetInfo()">Reset🔁 </button>
   <button class="darkmode" onclick="DarkMode()">Dark Mode🌙</button>
     </body>
 </html>
 <style>
-   * {
+** {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
     min-height: 100vh;
-    background: radial-gradient(circle at top left, #dbeafe, transparent 28%), #f8fafc;;
+    background:
+        radial-gradient(circle at top left, #dbeafe, transparent 28%),
+        #f8fafc;
     font-family: Arial, sans-serif;
     color: #102a43;
+    padding: 20px;
+    transition: 0.3s;
 }
+
+/* Main Container */
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 900px;
-    margin: 40px auto 0;
-    padding: 40px;
+    margin: 20px auto;
+    padding: 42px;
     text-align: center;
-    background: white;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
     border-radius: 24px;
-    box-shadow: 0 12px 35px rgba(16, 42, 67, 0.10);
+
+    box-shadow:
+        0 20px 50px rgba(15, 23, 42, 0.12),
+        0 2px 8px rgba(15, 23, 42, 0.05);
+
+    transition: 0.3s;
 }
+
+/* Title */
 
 h1 {
-    color: #102a43;
-    font-size: 38px;
     margin: 0 0 15px;
+    color: #0f172a;
+    font-size: 38px;
+    letter-spacing: -1px;
 }
 
+/* Paragraph */
+
 p {
+    margin: 0 auto;
+    max-width: 700px;
     font-size: 18px;
     line-height: 1.7;
     color: #64748b;
 }
 
-/* الصورة */
+/* Image */
 
 img {
     width: 260px;
     height: 300px;
     object-fit: cover;
-    border-radius: 20px;
+
     display: block;
     margin: 30px auto;
-    box-shadow: 0 10px 30px rgba(16, 42, 67, 0.15);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(16, 42, 67, 0.15);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s;
 }
 
-/* الأزرار */
+img:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 15px 35px rgba(16, 42, 67, 0.20);
+}
+
+/* Buttons */
 
 button {
     background: #102a43;
     color: white;
+
     border: none;
     padding: 12px 24px;
     margin: 6px;
+
     border-radius: 12px;
+
     font-size: 15px;
     font-weight: bold;
+
     cursor: pointer;
+
     transition: 0.25s;
-    box-shadow: 0 5px 12px rgba(16, 42, 67, 0.15);
+
+    box-shadow:
+        0 5px 12px rgba(16, 42, 67, 0.15);
 }
 
 button:hover {
     background: #243b53;
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(16, 42, 67, 0.20);
+
+    box-shadow:
+        0 8px 18px rgba(16, 42, 67, 0.20);
 }
 
 button:active {
     transform: translateY(0);
 }
 
-/* زرار Dark Mode */
+/* Active Button */
+
+.active {
+    background: #ffffff;
+    color: #102a43;
+
+    border: 2px solid #102a43;
+
+    box-shadow:
+        0 0 0 4px rgba(16, 42, 67, 0.08);
+
+    transform: translateY(-2px);
+}
+
+.active:hover {
+    background: #f1f5f9;
+    color: #102a43;
+    border-color: #102a43;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 18px rgba(16, 42, 67, 0.15);
+}
+
+/* Dark Mode Button */
 
 .darkmode {
     display: block;
+
     margin: 20px auto 0;
-    background: #ffffff;
-    color: #102a43;
-   padding: 10px 18px;
-    border: 1px solid #dbe1e8;
-    border-radius: 50px;
+
+    padding: 10px 18px;
+
     background: white;
     color: #102a43;
+
+    border: 1px solid #dbe1e8;
+    border-radius: 50px;
+
     font-size: 14px;
     font-weight: bold;
+
     cursor: pointer;
+
     transition: 0.25s;
-    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.12);
+
+    box-shadow:
+        0 4px 12px rgba(16, 42, 67, 0.12);
 }
 
 .darkmode:hover {
     background: #102a43;
     color: white;
-    box-shadow: 0 7px 16px rgba(16, 42, 67, 0.18);
+
+    box-shadow:
+        0 7px 16px rgba(16, 42, 67, 0.18);
 }
 
-
-/* زرار Logout */
+/* Logout */
 
 .logout {
     display: block;
+
     margin: 25px auto;
+
     background: #102a43;
 }
+
+/* Reset */
+
 .reset {
     display: block;
-    margin: 10px auto;
-    background: #102a43;
-    margin-top: 18px;
-    margin-top: 20px;
-        display: block;
+
     margin: 20px auto 0;
+
+    padding: 10px 18px;
+
     background: #ffffff;
     color: #102a43;
+
     border: 1px solid #cbd5e1;
-    padding: 10px 18px;
     border-radius: 50px;
+
     font-size: 14px;
     font-weight: bold;
+
     cursor: pointer;
+
     transition: 0.25s;
-    box-shadow: 0 4px 12px rgba(16, 42, 67, 0.12);
+
+    box-shadow:
+        0 4px 12px rgba(16, 42, 67, 0.12);
 }
+
 .reset:hover {
     background: #102a43;
     color: white;
+
     transform: translateY(-2px);
 }
 
-
-/* Dark Mode */
+/* =========================
+   Dark Mode
+   ========================= */
 
 .dark-mode {
-     background:
-        radial-gradient(circle at top left, #64748b, transparent 32%),
-        radial-gradient(circle at bottom right, #1e3a8a, transparent 38%),
+    background:
+        radial-gradient(
+            circle at top left,
+            #64748b,
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #1e3a8a,
+            transparent 38%
+        ),
         #0f172a;
-color: white;
+
+    color: white;
 }
 
 .dark-mode .container {
-    background: #1e293b;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.30);
+    background: rgba(30, 41, 59, 0.88);
+
+    border-color: rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.30);
 }
 
 .dark-mode h1 {
@@ -174,6 +278,8 @@ color: white;
     color: #cbd5e1;
 }
 
+/* Dark Buttons */
+
 .dark-mode button {
     background: #334155;
     color: #f8fafc;
@@ -183,9 +289,12 @@ color: white;
     background: #475569;
 }
 
+/* Dark Mode Button */
+
 .dark-mode .darkmode {
     background: #334155;
     color: #f8fafc;
+
     border-color: #475569;
 }
 
@@ -193,67 +302,182 @@ color: white;
     background: #475569;
 }
 
-/* الصورة في Dark Mode */
+/* Dark Reset */
 
-.dark-mode img {
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
-}.dark-mode .active {
+.dark-mode .reset {
+    background: #334155;
+    color: #f8fafc;
+
+    border-color: #475569;
+}
+
+.dark-mode .reset:hover {
+    background: #475569;
+}
+
+/* Dark Active Button */
+
+.dark-mode .active {
     background: #f8fafc;
     color: #0f172a;
+
     border: 2px solid #cbd5e1;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .dark-mode .active:hover {
     background: #e2e8f0;
     color: #0f172a;
+
     border-color: #f8fafc;
+
     transform: translateY(-2px);
 }
 
+/* Dark Image */
 
-/* الموبايل */
+.dark-mode img {
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.45);
+}
 
-@media (max-width: 600px) {
+/* =========================
+   Tablet
+   ========================= */
+
+@media (max-width: 800px) {
+
+    body {
+        padding: 16px;
+    }
 
     .container {
-        width: 92%;
-        padding: 28px 18px;
-        margin-top: 20px;
+        padding: 35px 28px;
     }
 
     h1 {
-        font-size: 30px;
+        font-size: 34px;
     }
 
     p {
-        font-size: 16px;
+        font-size: 17px;
+    }
+}
+
+/* =========================
+   Phone
+   ========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+        overflow-x: hidden;
+    }
+
+    .container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 30px 18px;
+
+        border-radius: 22px;
+    }
+
+    h1 {
+        font-size: clamp(26px, 8vw, 32px);
+        margin-bottom: 12px;
+    }
+
+    p {
+        font-size: 15px;
+        line-height: 1.6;
     }
 
     img {
-        width: 220px;
+        width: min(220px, 75vw);
         height: 260px;
+
+        margin: 25px auto;
+        border-radius: 18px;
     }
 
     button {
         padding: 11px 18px;
         font-size: 14px;
     }
-}
-.active {
-    background: #ffffff;
-    color: #102a43;
-    border: 2px solid #102a43;
-    box-shadow: 0 0 0 4px rgba(16, 42, 67, 0.08);
-    transform: translateY(-2px);
+
+    .darkmode,
+    .reset {
+        margin-top: 16px;
+    }
+
+    .logout {
+        margin: 20px auto;
+    }
 }
 
-.active:hover {
-    background: #f1f5f9;
-    color: #102a43;
-    border-color: #102a43;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(16, 42, 67, 0.15);
+/* =========================
+   Small Phones
+   ========================= */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        padding: 25px 15px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    img {
+        width: 190px;
+        height: 230px;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .darkmode,
+    .reset {
+        width: auto;
+        padding: 10px 18px;
+    }
+}
+
+/* =========================
+   Landscape Phones
+   ========================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+
+    body {
+        align-items: flex-start;
+    }
+
+    .container {
+        margin: 15px auto;
+        padding: 25px;
+    }
+
+    img {
+        width: 180px;
+        height: 200px;
+        margin: 20px auto;
+    }
 }
 </style>
 <script>
@@ -284,8 +508,7 @@ function myprojects(button) {
         "My projects:<br>" +
         "1. Login Page 🔐<br>" +
         "2. Personal Home Page 💻<br>" +
-        "3. My To-Do List📝<br>"+
-        "4. More Projects Coming Soon 🔥";
+        "3. More Projects Coming Soon 🔥";
 }
 
 function myfavoritehobby(button) {
