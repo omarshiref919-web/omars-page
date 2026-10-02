@@ -1,17 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head>
 <title>Omar's page</title>
-<div class="login-box">
-<h1>Login</h1>
-<h1>Omar's page</h1>
-<input id ="username" type="text" placeholder="Username">
-<input id="password" type="password" placeholder="Password">
-<button class="login-btn" onclick="login()">Login</button>
-<button class="show-password" onclick="showPassword()">👁️</button>
-<button class="reset-btn" onclick="reset()">Reset</button>
-<p id ="message"></p>
-</div>
-<button class="dark-btn" onclick="DarkMode()">Dark Mode🌙</button>
-
- <style>
+<style>
    * {
     box-sizing: border-box;
 }
@@ -80,19 +71,18 @@ input:focus {
     color: white;
     font-size: 16px;
     font-weight: bold;
-     cursor: pointer; 
+    cursor: pointer;
     transition: 0.25s;
     box-shadow: 0 8px 18px rgba(30, 58, 138, 0.2);
 }
 
 .login-btn:hover {
     transform: translateY(-2px);
-     box-shadow: 0 12px 24px rgba(30, 58, 138, 0.28); 
+    box-shadow: 0 12px 24px rgba(30, 58, 138, 0.28);
 }
 
 .login-btn:active {
     transform: translateY(0);
-    
 }
 
 /* Show Password */
@@ -106,7 +96,7 @@ input:focus {
 }
 
 .show-password:hover {
-     opacity: 1;
+    opacity: 1;
     transform: scale(1.1);
 }
 
@@ -145,8 +135,13 @@ input:focus {
         transform: scale(1);
     }
 }
-  /* phone */
-  @media (max-width: 600px) {
+
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 600px) {
 
     body {
         padding: 20px;
@@ -161,7 +156,7 @@ input:focus {
     }
 
     h1 {
-        font-size: 30px;
+        font-size: clamp(26px, 8vw, 30px);
         margin-bottom: 24px;
     }
 
@@ -192,20 +187,74 @@ input:focus {
         margin-top: 12px;
     }
 
-    /* Dark Mode Button */
-
- 
+    .dark-btn {
+        position: static;
+        transform: none;
+        margin-top: 18px;
+    }
 }
-   .dark-mode {
+
+
+/* Small phones */
+@media (max-width: 380px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .login-box {
+        padding: 28px 18px;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    input,
+    .login-btn {
+        height: 46px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+}
+
+
+/* Landscape phones */
+@media (max-height: 500px) and (orientation: landscape) {
+
+    body {
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .login-box {
+        margin: auto;
+    }
+
+    h1 {
+        margin-bottom: 18px;
+    }
+}
+
+
+/* =========================
+   Dark Mode
+   ========================= */
+
+.dark-mode {
     background:
         radial-gradient(circle at top left, #64748b, transparent 32%),
         radial-gradient(circle at bottom right, #1e3a8a, transparent 38%),
         #0f172a;
-color: white;
-   }
+    color: white;
+}
 
- 
- .dark-btn {
+
+/* Dark Mode Button */
+.dark-btn {
     position: fixed;
     top: calc(50% + 270px);
     left: 50%;
@@ -224,11 +273,12 @@ color: white;
 }
 
 .dark-btn:hover {
-     background: #102a43;
-     color: white; 
+    background: #102a43;
+    color: white;
     box-shadow: 0 7px 16px rgba(16, 42, 67, 0.18);
 }
- .dark-mode .dark-btn {
+
+.dark-mode .dark-btn {
     background: #334155;
     color: #f8fafc;
     border-color: #475569;
@@ -240,6 +290,22 @@ color: white;
 
  </style>
 
+<body>
+    <div class="login-box">
+        <h1>Login</h1>
+        <h1>Omar's page</h1>
+        <input id ="username" type="text" placeholder="Username">
+<input id="password" type="password" placeholder="Password">
+<button class="login-btn" onclick="login()">Login</button>
+<button class="show-password" onclick="showPassword()">👁️</button>
+<button class="reset-btn" onclick="reset()">Reset</button>
+<p id ="message"></p>
+</div>
+<button class="dark-btn" onclick="DarkMode()">Dark Mode🌙</button>  
+</body>
+</head>
+
+ 
 <script>
     let attemps=0;
 function login (){
